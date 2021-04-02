@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "fabra-online",
+    "staging": "fabra-online"
+  }
+}
