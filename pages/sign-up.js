@@ -1,14 +1,15 @@
-import {useToast} from '@chakra-ui/react';
-import {useAuth} from '../lib/auth-context';
+import { useToast } from '@chakra-ui/react';
+import { useAuth } from '../lib/auth-context';
 import Auth from '../components/auth';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const SignUp = () => {
     const auth = useAuth();
     const toast = useToast();
     const router = useRouter();
 
-    const signUp = ({email, pass}) => {
+    const signUp = ({ email, pass }) => {
         auth.signup(email, pass)
             .then(() => {
                 toast({
@@ -31,7 +32,15 @@ const SignUp = () => {
             });
     };
 
-    return <Auth type="Sign Up" onSubmit={signUp} />;
+    return (
+        <div>
+            <Head>
+                <title>Fabra Online - Bring It On | Sign Up</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <Auth type="Sign Up" onSubmit={signUp} />
+        </div>
+    );
 };
 
 export default SignUp

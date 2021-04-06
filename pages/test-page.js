@@ -1,5 +1,6 @@
-import Auth from '../components/auth'
+import ProductCard from '../components/productCard'
 import Head from 'next/head'
+import NavBar from '../components/navbar'
 
 export default function TestPage() {
     return (
@@ -10,7 +11,8 @@ export default function TestPage() {
             </Head>
 
             <main>
-                <Auth />
+                <NavBar />
+                <ProductCard />
             </main>
         </div>
     )
