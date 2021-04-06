@@ -65,8 +65,8 @@ const AuthContent = ({register, errors, type, ...rest}) => {
 
                 <Button
                     onClick={() => {
-                        auth.signinWithGoogle('/deals').then(() => {
-                            router.push('/deals');
+                        auth.signinWithGoogle('/test-page').then(() => {
+                            router.push('/test-page');
                         }).catch((error) => {
                                 toast({
                                     title: 'An error occurred.',

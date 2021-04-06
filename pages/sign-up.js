@@ -19,7 +19,7 @@ const SignUp = () => {
                     duration: 3000,
                     isClosable: true
                 });
-                router.push('/deals');
+                router.push('/test-page');
             })
             .catch((error) => {
                 toast({

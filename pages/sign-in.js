@@ -12,7 +12,7 @@ const SignIn = () => {
     const signIn = ({ email, pass }) => {
         auth.signinWithEmail(email, pass)
             .then(() => {
-                router.push('/deals');
+                router.push('/test-page');
             })
             .catch((error) => {
                 toast({
