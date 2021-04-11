@@ -9,9 +9,8 @@ export default function TestPageDetails() {
                 <title>Fabra Online | Bring It On</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
+            <NavBar />
             <main>
-                <NavBar />
                 <ProductCardDetails />
             </main>
         </div>

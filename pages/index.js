@@ -14,10 +14,8 @@ export default function Home() {
         <title>Fabra Online | Bring It On</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Navbar />
       <main>
-        <Navbar />
-
         <Center>
           <Heading color="brand.200" mx={4} paddingTop={28}
             textAlign="center" justifyContent="center">
