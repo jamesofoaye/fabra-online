@@ -3,7 +3,7 @@ import Link from 'next/link'
 import {
   Grid, Button, Heading, Text, Center, Image, Box
 } from '@chakra-ui/react'
-import Navbar from "../components/navbar";
+import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 import SearchInput from '../components/search'
 
@@ -14,14 +14,19 @@ export default function Home() {
         <title>Fabra Online | Bring It On</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+
+      <Box pb={28}>
+        <NavBar />
+      </Box>
+
       <main>
         <Center>
-          <Heading color="brand.200" mx={4} paddingTop={28}
+          <Heading color="brand.200" mx={4}
             textAlign="center" justifyContent="center">
             A Community of Buy and Sell.
           </Heading>
         </Center>
+
         <Center>
           <Text fontSize={20} mx={{ base: 4, md: 32 }} pt={2} textAlign="center" justifyContent="center">Buy and sell everything
           from used cars to mobile phones, computers, animals or pets, or search for a property and services, jobs and more
@@ -31,7 +36,7 @@ export default function Home() {
 
         <SearchInput />
 
-        <Grid templateColumns="repeat(3, 1fr)" gap={{ base: 4, md: 0 }} margin={{ base: 4 }} mx={{ sm: 60, lg: 80 }}>
+        <Grid templateColumns={"repeat(3, 1fr)"} gap={{ base: 4, md: 0 }} margin={{ base: 4 }} mx={{ sm: 60, lg: 80 }}>
           <Link href="/category/barber-and-salon">
             <Box>
               <Image w="17" h="12"

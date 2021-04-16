@@ -1,4 +1,4 @@
-import { Box, Image, Flex, Text, Link, Spinner} from "@chakra-ui/react";
+import { Box, Image, Flex, Text, Link, Spinner, SimpleGrid } from "@chakra-ui/react";
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import Head from 'next/head'
 import NavBar from '../components/navbar'
@@ -7,51 +7,62 @@ import { useQuery } from '@apollo/client'
 import { GET_POSTS_QUERY } from '../graphql/queries'
 
 function TestPage() {
-    const { loading, error, data } = useQuery(GET_POSTS_QUERY)
-    if (error) return <h1>Error....</h1>
-    if (loading)
-        return (
-                <Flex pt={24} align="center" justify="center">
-                    <Spinner size="xl" label="Loading Posts" />
-                </Flex>
-        )
+
+    const { loading, data } = useQuery(GET_POSTS_QUERY)
+
     return (
         <div>
             <Head>
                 <title>Fabra Online | Bring It On</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <NavBar />
+            <Box pb={28}>
+                <NavBar />
+            </Box>
             <main>
-                {
-                    data.posts.map((data) => (
-                        <Link href="/test-page-details" textDecoration="none" key={data.id}>
-                            <Box /*maxW="320px"*/ pt={{ base: 20, md: "8%" }} borderRadius="lg" m={2}>
-                                <Image src="https://bit.ly/2k1H1t6" />
-                                <Box p="3" borderWidth="1px">
-                                    <Flex mt={2} direction="row" >
-                                        <Box as={FaMapMarkerAlt} color="brand.200"></Box>
-                                        <Text
-                                            ml={2}
-                                            textTransform="uppercase"
-                                            fontSize="sm"
-                                            fontWeight="bold"
-                                        >
-                                            {data.location}
-                                        </Text>
-                                    </Flex>
-                                    <Flex>
-                                        <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
-                                            {data.title}
-                                            <Text mt={2}>{data.price}</Text>
-                                        </Text>
-                                    </Flex>
-                                </Box>
+                {loading ? (
+                    <Flex pt={24} align="center" justify="center">
+                        <Spinner size="xl" label="Loading Posts" />
+                    </Flex>
+                ) : (
+                    <SimpleGrid minChildWidth="200px" /*templateColumns={[null, "repeat(3, 1fr)"]}*/ spacingY="20px" spacingX="40px" mx={5} >
+                        {data.posts.map((data) => (
+                            <Box key={data.id}>
+                                <Link href={"/" + data.id} textDecoration="none">
+                                    <Box borderWidth="1px" borderRadius="lg">
+                                        <Image src="https://bit.ly/2k1H1t6" borderTopRadius="lg" />
+                                        <Box p="3">
+                                            <Flex mt={1} direction="row" >
+                                                <Box as={FaMapMarkerAlt} color="brand.200"></Box>
+                                                <Text
+                                                    ml={2}
+                                                    textTransform="capitalize"
+                                                    fontSize="sm"
+                                                    fontWeight="semibold"
+                                                >
+                                                    {data.location}
+                                                </Text>
+                                            </Flex>
+                                            <Flex>
+                                                <Text mt={1} fontSize="xl" fontWeight="semibold"
+                                                    textTransform="capitalize"
+                                                    lineHeight="short">
+                                                    {data.title}
+                                                    <Text mt={1}>{data.price}</Text>
+                                                </Text>
+                                            </Flex>
+                                        </Box>
+                                    </Box>
+                                </Link>
                             </Box>
-                        </Link>
-                    ))
+                        ))
+                        }
+                    </SimpleGrid>
+                )
                 }
+
             </main>
+
         </div>
     )
 }
