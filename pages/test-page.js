@@ -21,9 +21,10 @@ function TestPage() {
             </Box>
             <main>
                 {loading ? (
-                    <Flex pt={24} align="center" justify="center">
-                        <Spinner size="xl" label="Loading Posts" />
-                    </Flex>
+                        <Flex pt={24} align="center" justify="center">
+                            <Spinner size="xl" label="Loading Posts" />
+                        </Flex>
+
                 ) : (
                     <SimpleGrid minChildWidth="200px" /*templateColumns={[null, "repeat(3, 1fr)"]}*/ spacingY="20px" spacingX="40px" mx={5} >
                         {data.posts.map((data) => (
@@ -45,8 +46,8 @@ function TestPage() {
                                             </Flex>
                                             <Flex>
                                                 <Text mt={1} fontSize="xl" fontWeight="semibold"
-                                                    textTransform="capitalize"
-                                                    lineHeight="short">
+                                                      textTransform="capitalize"
+                                                      lineHeight="short">
                                                     {data.title}
                                                     <Text mt={1}>{data.price}</Text>
                                                 </Text>
