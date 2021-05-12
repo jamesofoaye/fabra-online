@@ -37,5 +37,6 @@
   },
   "devDependencies": {
     "@apollo/react-ssr": "^4.0.0"
+      "postcss": ">=8.2.10"
   }
 }
