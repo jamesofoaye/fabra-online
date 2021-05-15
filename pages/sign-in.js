@@ -12,7 +12,15 @@ const SignIn = () => {
     const signIn = ({ email, pass }) => {
         auth.signinWithEmail(email, pass)
             .then(() => {
-                router.push('/test-page');
+                toast({
+                    title: 'Success!',
+                    description: 'Login Succesful.',
+                    status: 'success',
+                    duration: 3000,
+                    isClosable: true
+                });
+                //page to redirect user after successful login
+                //router.push('/test-page');
             })
             .catch((error) => {
                 toast({

@@ -107,7 +107,7 @@ const FullScreenAuth = ({ type, onSubmit }) => {
                 maxWidth="400px"
                 onSubmit={handleSubmit((data) => onSubmit(data))}
                 px={8}
-                py={12}
+                py={[null, 12]}
                 register={register}
                 shadow={[null, 'dark-lg']}
                 spacing={3}
@@ -190,7 +190,7 @@ export const withSignInRedirect = (Component) => (props) => {
     const signIn = ({ email, pass }) => {
         auth.signinWithEmail(email, pass)
             .then(() => {
-                router.push('/deals');
+                router.push('/test-page');
             })
             .catch((error) => {
                 toast({

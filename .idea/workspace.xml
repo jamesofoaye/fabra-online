@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95aa016d-3ca6-408b-8f7e-b4e6c948c3a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/uploader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/post-ad.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/post-an-ad.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sign-in.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sign-in.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sign-up.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sign-up.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/test-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test-page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -43,7 +54,10 @@
       <workItem from="1618105000817" duration="637000" />
       <workItem from="1618263908087" duration="1791000" />
       <workItem from="1618610583043" duration="818000" />
-      <workItem from="1618611579489" duration="2911000" />
+      <workItem from="1618611579489" duration="5303000" />
+      <workItem from="1621078943937" duration="1467000" />
+      <workItem from="1621082492083" duration="2743000" />
+      <workItem from="1621105517139" duration="8242000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1617675258722</created>
@@ -66,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618611145491</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed unavailable page">
+      <created>1618630918891</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618630918891</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +110,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="forgot password and graphql query" />
     <MESSAGE value="consumed api from the backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="consumed api from the backend" />
+    <MESSAGE value="fixed unavailable page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed unavailable page" />
   </component>
 </project>

@@ -19,7 +19,8 @@ const SignUp = () => {
                     duration: 3000,
                     isClosable: true
                 });
-                router.push('/test-page');
+                //page to redirect user after successful sign up
+                //router.push('/test-page');
             })
             .catch((error) => {
                 toast({

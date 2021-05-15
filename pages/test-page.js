@@ -68,4 +68,4 @@ function TestPage() {
     )
 }
 
-export default withApollo({ ssr: true })(TestPage)
+export default withApollo(TestPage)
