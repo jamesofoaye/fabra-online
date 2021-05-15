@@ -17,16 +17,18 @@ export default function Navbar() {
                         />
                     </Box>
                     <Spacer />
-                    <Button leftIcon={<AddIcon />}
-                            color="white"
-                            bgGradient="linear(to-r,brand.200,brand.100)"
-                            marginRight={{ base: 3, md: 10 }}
-                            marginTop={{ base: 5, md: 7 }}
-                    >
-                        <Link href={'/post-ad'}>
+
+                    <Link href={'/post-ad'}>
+                        <Button leftIcon={<AddIcon />}
+                                    color="white"
+                                    bgGradient="linear(to-r,brand.200,brand.100)"
+                                    marginRight={{ base: 3, md: 10 }}
+                                    marginTop={{ base: 5, md: 7 }}
+                                _hover={{ bg: "brand.100"}}
+                        >
                             Post an Ad
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>
                 </Flex>
             </Box>
         </div>
