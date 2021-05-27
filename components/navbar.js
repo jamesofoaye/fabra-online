@@ -37,6 +37,7 @@ export default function Navbar() {
                     flex={{ base: 0, md: 'auto' }}
                     display={{ base: 'flex', md: 'none' }}>
                     <IconButton
+colorScheme={'brand.100'}
                         onClick={onToggle}
                         icon={
                             isOpen ? <CloseIcon variant={'ghost'} w={3} h={3} /> : <HamburgerIcon variant={'ghost'} w={5} h={5} />
