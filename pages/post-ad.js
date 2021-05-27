@@ -1,10 +1,10 @@
 import {
-  FormLabel, Select,
-  FormControl, Input, FormHelperText,
-  Button, Center, Heading, Text, NumberDecrementStepper,
+  FormLabel, Select, FormControl, Input, FormHelperText,
+  Button, Center, Heading, NumberDecrementStepper,
   NumberIncrementStepper, NumberInputStepper,
   NumberInputField, NumberInput, Textarea, Stack
 } from "@chakra-ui/react";
+//import ImageUploader from '../components/uploader'
 import Head from "next/head";
 
 export default function Post_An_Ad() {
@@ -17,12 +17,12 @@ export default function Post_An_Ad() {
 
       <Center>
         <Heading color="brand.200"
-        py={2}>
+          py={2}>
           Post Ad
         </Heading>
       </Center>
 
-      <Stack px={{base: 8, md: "30%"}}>
+      <Stack px={{ base: 8, md: "30%" }}>
         <FormControl>
           <FormLabel>Title</FormLabel>
           <Input
@@ -48,33 +48,29 @@ export default function Post_An_Ad() {
           <FormLabel>Price</FormLabel>
           <NumberInput>
             <NumberInputField
-                required
-                aria-label="Price"
-                name="price"
-                placeholder="Please enter price."
+              required
+              aria-label="Price"
+              name="price"
+              placeholder="Please enter price."
             />
-            <NumberInputStepper>
-              <NumberIncrementStepper />
-              <NumberDecrementStepper />
-            </NumberInputStepper>
           </NumberInput>
         </FormControl>
 
-          <FormControl>
-              <FormLabel>Location</FormLabel>
-              <Input
-                  aria-label="Location"
-                  name="location"
-                  required
-                  placeholder="Please enter your location."
-              />
-          </FormControl>
+        <FormControl>
+          <FormLabel>Location</FormLabel>
+          <Input
+            aria-label="Location"
+            name="location"
+            required
+            placeholder="Please enter your location."
+          />
+        </FormControl>
 
         <FormControl>
           <FormLabel>Category</FormLabel>
           <Select
-              placeholder="Select Category"
-              required
+            placeholder="Select Category"
+            required
           >
             <option>Animals &amp; Pets</option>
             <option>Computers &amp; Electronics</option>
@@ -90,16 +86,20 @@ export default function Post_An_Ad() {
             <option>Vehicles</option>
           </Select>
           <FormHelperText>
-              Which category does your product or service falls in?
+            Which category does your product or service falls in?
           </FormHelperText>
         </FormControl>
 
+        {
+          //<ImageUploader />
+        }
+
         <Button
-            type="submit" mt={10}
-            bgGradient="linear(to-r,brand.200,brand.100)"
-            _hover={{ bg: "brand.100" }}
-            color="white"
-            variant="solid"
+          type="submit" mt={10}
+          bgGradient="linear(to-r,brand.200,brand.100)"
+          _hover={{ bg: "brand.100" }}
+          color="white"
+          variant="solid"
         >
           Post Ad
         </Button>

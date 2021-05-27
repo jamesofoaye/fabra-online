@@ -1,8 +1,8 @@
-import { useState } from 'react';
+/*import React, { useState } from 'react';
 import { Upload } from 'antd';
 import ImgCrop from 'antd-img-crop';
 
-export const Demo = () => {
+const Demo = () => {
     const [fileList, setFileList] = useState([
         {
             uid: '-1',
@@ -45,3 +45,4 @@ export const Demo = () => {
         </ImgCrop>
     );
 };
+*/

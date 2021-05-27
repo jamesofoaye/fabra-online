@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95aa016d-3ca6-408b-8f7e-b4e6c948c3a0" name="Default Changelist" comment="created post ad page and added form">
-      <change beforePath="$PROJECT_DIR$/pages/test.js" beforeDir="false" />
+    <list default="true" id="95aa016d-3ca6-408b-8f7e-b4e6c948c3a0" name="Default Changelist" comment="deleted test page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +27,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../skin-plus" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -47,7 +48,8 @@
       <workItem from="1618611579489" duration="5303000" />
       <workItem from="1621078943937" duration="1467000" />
       <workItem from="1621082492083" duration="2743000" />
-      <workItem from="1621105517139" duration="9790000" />
+      <workItem from="1621105517139" duration="10058000" />
+      <workItem from="1621339127812" duration="100000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1617675258722</created>
@@ -91,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621120095718</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="deleted test page">
+      <created>1621120542489</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1621120542489</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +125,7 @@
     <MESSAGE value="consumed api from the backend" />
     <MESSAGE value="fixed unavailable page" />
     <MESSAGE value="created post ad page and added form" />
-    <option name="LAST_COMMIT_MESSAGE" value="created post ad page and added form" />
+    <MESSAGE value="deleted test page" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted test page" />
   </component>
 </project>
