@@ -153,9 +153,11 @@ export default function Home() {
 
         <Center p={5}>
           <Button
+              as={'a'}
             bgGradient="linear(to-r,brand.200,brand.100)"
             _hover={{ bg: "brand.100" }}
             color="white"
+              href={'/post-ad'}
           >
             Post and advert for free
           </Button>

@@ -87,7 +87,18 @@ const AuthContent = ({ register, errors, type, ...rest }) => {
                 </Button>
                 {
                     type == "Sign In"
-                        ? <Link href="/forgot-password">Forgot Password?</Link>
+                        ?
+                        <>
+                            <Link href="/forgot-password">Forgot Password?</Link>
+                            <Text>Don't have an account? {''}
+                                <Link
+                                    href="/sign-up"
+                                    pl="2"
+                                    textDecoration="underline">
+                                    Sign Up
+                                </Link>
+                            </Text>
+                        </>
                         : ""
                 }
             </Stack>
