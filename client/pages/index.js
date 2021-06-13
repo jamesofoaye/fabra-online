@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+<<<<<<< HEAD:client/pages/index.js
 import { Grid, Button, Heading, Text, Center, Image, Box } from '@chakra-ui/react'
 
 //Components
@@ -7,6 +8,14 @@ import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 import SearchInput from '../components/utilities/search'
 import ProductInitialShowing from "../components/ProductInitialShowing";
+=======
+import {
+  Grid, Button, Heading, Text, Center, Image, Box
+} from '@chakra-ui/react'
+import NavBar from "../components/navbar";
+import Footer from "../components/footer";
+import SearchInput from '../components/search'
+>>>>>>> e21045ffd686adb83c446bb3c775599071c0491e:pages/index.js
 
 export default function Home() {
   return (
@@ -15,9 +24,17 @@ export default function Home() {
         <title>Fabra Online | Bring It On</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+<<<<<<< HEAD:client/pages/index.js
       <Box pb={28}>
         <NavBar />
       </Box>
+=======
+
+      <Box pb={28}>
+        <NavBar />
+      </Box>
+
+>>>>>>> e21045ffd686adb83c446bb3c775599071c0491e:pages/index.js
       <main>
         <Center>
           <Heading color="brand.200" mx={4}
@@ -150,6 +167,7 @@ export default function Home() {
           <Heading color="brand.200" p={3}>Got something to sell?</Heading>
         </Center>
 
+<<<<<<< HEAD:client/pages/index.js
 
 
 
@@ -170,6 +188,15 @@ export default function Home() {
             bgGradient="linear(to-r,brand.200,brand.100)"
             _hover={{ bg: "brand.100" }}
             color="white"
+=======
+        <Center p={5}>
+          <Button
+              as={'a'}
+            bgGradient="linear(to-r,brand.200,brand.100)"
+            _hover={{ bg: "brand.100" }}
+            color="white"
+              href={'/post-ad'}
+>>>>>>> e21045ffd686adb83c446bb3c775599071c0491e:pages/index.js
           >
             Post and advert for free
           </Button>
@@ -177,8 +204,12 @@ export default function Home() {
 
         <Footer />
       </main>
+<<<<<<< HEAD:client/pages/index.js
 
     </div>
 
+=======
+    </div>
+>>>>>>> e21045ffd686adb83c446bb3c775599071c0491e:pages/index.js
   )
 }

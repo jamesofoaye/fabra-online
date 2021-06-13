@@ -87,7 +87,22 @@ const AuthContent = ({ register, errors, type, ...rest }) => {
                 </Button>
                 {
                     type == "Sign In"
+<<<<<<< HEAD:client/components/auth.js
                         ? <Link href="/forgot-password">Forgot Password?</Link>
+=======
+                        ?
+                        <>
+                            <Link href="/forgot-password">Forgot Password?</Link>
+                            <Text>Don't have an account? {''}
+                                <Link
+                                    href="/sign-up"
+                                    pl="2"
+                                    textDecoration="underline">
+                                    Sign Up
+                                </Link>
+                            </Text>
+                        </>
+>>>>>>> e21045ffd686adb83c446bb3c775599071c0491e:components/auth.js
                         : ""
                 }
             </Stack>

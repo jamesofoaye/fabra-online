@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "fabra-online",
   "version": "1.0.0",
   "description": "",
@@ -21,4 +22,16 @@
     "nodemon": "1.18.4"
   },
   "keywords": []
+=======
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+>>>>>>> e21045ffd686adb83c446bb3c775599071c0491e
 }

@@ -10,4 +10,8 @@ if (!firebase.apps.length) {
         storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
     });
 }
+<<<<<<< HEAD:client/lib/firebase-config.js
+=======
+
+>>>>>>> e21045ffd686adb83c446bb3c775599071c0491e:lib/firebase-config.js
 export default firebase;
