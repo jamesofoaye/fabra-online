@@ -1,0 +1,7 @@
+.display-ads {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 70%;
+  margin: 0 auto;
+  grid-gap: 1rem;
+}
