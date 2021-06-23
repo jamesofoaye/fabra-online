@@ -1,10 +1,10 @@
-import { graphqlHTTP } from "express-graphql";
-import express from "express";
-import mongoose, { mongo } from "mongoose";
-import cors from "cors";
+const { graphqlHTTP } = require("express-graphql");
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
 //Local imports
-import schema from "../schema/schema";
+const schema = require("../schema/schema");
 //New express app
 const app = express();
 
@@ -12,8 +12,8 @@ const app = express();
 app.use(cors());
 
 //Connection to mongoDB
-// const mongoURI = process.env.MONGOURI;
-const URI = "mongodb+srv://ufrLUeusmHUclJkp:ufrLUeusmHUclJkp@fabra0.d7moj.mongodb.net/adsDB?retryWrites=true&w=majority";
+
+const mongoURI = "mongodb+srv://wematu:Cmo6c77QaFHrHPux@fabra0.d7moj.mongodb.net/adsDB";
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Local mongoDB

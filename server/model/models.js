@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const adSchema = new mongoose.Schema({
   title: String,
   price: String,
-  adDescription: String,
-  adLocation: String,
+  description: String,
+  location: String,
   categoryId: String,
   datePosted: String,
   gallery: []
@@ -14,8 +14,7 @@ const adSchema = new mongoose.Schema({
 const categorySchema = new mongoose.Schema({
   name: String
 });
-
 //Modules and exports
 const Category = new mongoose.model("category", categorySchema);
 const Ad = new mongoose.model("ad", adSchema);
-export { Category, Ad };
+module.exports = { Category, Ad };

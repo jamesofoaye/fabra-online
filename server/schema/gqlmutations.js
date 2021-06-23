@@ -1,6 +1,6 @@
 const graphql = require("graphql");
-import { Category, Ad } from "../model/models";
-import {AdType, CategoryType} from "./gqltypes";
+const { Category, Ad } = require("../model/models");
+const {AdType, CategoryType} = require("./gqltypes");
 
 const {
   GraphQLObjectType,
@@ -20,8 +20,8 @@ const Mutation = new GraphQLObjectType({
         args: {
           title: { type: GraphQLString },
           price: { type: GraphQLString },
-          adDescription: { type: GraphQLString },
-          adLocation: { type: GraphQLString },
+          description: { type: GraphQLString },
+          location: { type: GraphQLString },
           datePosted: { type: GraphQLString },
           categoryId: {type: GraphQLString},
           gallery: {type: new GraphQLList(GraphQLString)}
@@ -29,10 +29,10 @@ const Mutation = new GraphQLObjectType({
         resolve: (parent, args) => {
           let newAd = new Ad({
             title: args.title,
-            adDescription: args.adDescription,
+            lescription: args.description,
             price: args.price,
             categoryId: args.categoryId,
-            adLocation: args.adLocation,
+            location: args.location,
             datePosted: args.datePosted,
             gallery: args.gallery
           });
@@ -53,4 +53,4 @@ const Mutation = new GraphQLObjectType({
     }
   });
 
-  export default Mutation;
+  module.exports = Mutation;

@@ -1,21 +1,19 @@
 import { gql } from "apollo-boost";
-
+//Get all ads
 const getAds = gql`
 {
     ads{
+        id
         title
         description
         price
-        isNegotiable
-        adLocation
-        condition
+        location
         datePosted
         gallery
     }
 }
 `
-//tobe added above
-// category
+// Get all categories
 const getCategories = gql`
 {
 categories{
@@ -24,5 +22,4 @@ name
 }
 }
 `
-
 export { getAds, getCategories };

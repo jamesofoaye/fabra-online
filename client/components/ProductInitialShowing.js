@@ -5,16 +5,15 @@ const ProductInitialShowing = (props) => {
     const showAds = () => {
         if (props.data.loading) {
             return <div>Loading</div>
+            console.log(props)
         } else {
             return props.data.ads.map(ad => {
-                return (<div>
+                return (<div key={ad.id}>
                     <img src={ad.gallery[0]} />
                     {ad.title}
                     {ad.description}
                     {ad.price}
-                    {ad.isNegotiable}
-                    {ad.adLocation}
-                    {ad.condition}
+                    {ad.location}
                     {ad.datePosted}
                 </div>)
             })

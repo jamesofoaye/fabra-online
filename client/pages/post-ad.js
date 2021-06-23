@@ -7,7 +7,26 @@ import {
 //import ImageUploader from '../components/uploader'
 import Head from "next/head";
 
-export default function Post_An_Ad() {
+//written for backend
+import { useState } from "react";
+
+const Post_An_Ad = (props) => {
+ const [adInfo, setadInfo] = useState({
+   title: "",
+   description: "",
+   price: null,
+   location: "",
+   category: "",
+   gallery: []
+ });
+
+const handleInputChange = (e) => {
+  const name = e.target.name;
+  const value = e.target.value
+  setadInfo(preVal => {
+    return {...preVal, [name]: value}
+  })
+}
   return (
     <>
       <Head>
@@ -25,7 +44,8 @@ export default function Post_An_Ad() {
       <Stack px={{ base: 8, md: "30%" }}>
         <FormControl>
           <FormLabel>Title</FormLabel>
-          <Input
+          <Input name="title" value={adInfo.title}
+          onChange={handleInputChange}
             autoFocus
             aria-label="Title"
             name="title"
@@ -36,7 +56,8 @@ export default function Post_An_Ad() {
 
         <FormControl>
           <FormLabel>Description</FormLabel>
-          <Textarea
+          <Textarea name="description" value={adInfo.description}
+          onChange={handleInputChange}
             aria-label="Description"
             name="description"
             required
@@ -47,7 +68,8 @@ export default function Post_An_Ad() {
         <FormControl>
           <FormLabel>Price</FormLabel>
           <NumberInput>
-            <NumberInputField
+            <NumberInputField name="price" value={adInfo.price}
+            onChange={handleInputChange}
               required
               aria-label="Price"
               name="price"
@@ -58,7 +80,8 @@ export default function Post_An_Ad() {
 
         <FormControl>
           <FormLabel>Location</FormLabel>
-          <Input
+          <Input name="location" value={adInfo.location}
+          onChange={handleInputChange}
             aria-label="Location"
             name="location"
             required
@@ -68,7 +91,8 @@ export default function Post_An_Ad() {
 
         <FormControl>
           <FormLabel>Category</FormLabel>
-          <Select
+          <Select name="category" value={adInfo.category}
+          onChange={handleInputChange}
             placeholder="Select Category"
             required
           >
@@ -90,10 +114,6 @@ export default function Post_An_Ad() {
           </FormHelperText>
         </FormControl>
 
-        {
-          //<ImageUploader />
-        }
-
         <Button
           type="submit" mt={10}
           bgGradient="linear(to-r,brand.200,brand.100)"
@@ -103,8 +123,9 @@ export default function Post_An_Ad() {
         >
           Post Ad
         </Button>
-
+{console.log(adInfo)}
       </Stack>
     </>
   );
 }
+export default Post_An_Ad;

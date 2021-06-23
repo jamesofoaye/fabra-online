@@ -1,7 +1,7 @@
 const graphql = require("graphql");
-import { Category, Ad } from "../model/models";
-import {AdType, CategoryType} from "./gqltypes";
-import Mutation from "./gqlmutations";
+const { Category, Ad } = require("../model/models");
+const {AdType, CategoryType} = require("./gqltypes");
+
 
 const {
   GraphQLObjectType,
@@ -47,5 +47,4 @@ const RootQueryType = new GraphQLObjectType({
       }
     }
   });
-
-  export default RootQueryType;
+  module.exports = RootQueryType;

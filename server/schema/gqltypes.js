@@ -1,5 +1,5 @@
 const graphql = require("graphql");
-import { Category, Ad } from "../model/models";
+const { Category, Ad } = require("../model/models");
 
 const {
   GraphQLObjectType,
@@ -15,9 +15,9 @@ const {
     fields: () => ({
       id: { type: GraphQLID },
       title: { type: GraphQLString },
+      description: { type: GraphQLString },
       price: { type: GraphQLString },
-      adDescription: { type: GraphQLString },
-      adLocation: { type: GraphQLString },
+      location: { type: GraphQLString },
       datePosted: { type: GraphQLString },
       categoryId: { type: GraphQLString},
       gallery: { type: new GraphQLList(GraphQLString) },
@@ -38,4 +38,4 @@ const CategoryType = new GraphQLObjectType({
       }
     })
   });
-export {AdType, CategoryType};
+module.exports = {AdType, CategoryType};
