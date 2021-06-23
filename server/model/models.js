@@ -3,12 +3,10 @@ const mongoose = require("mongoose");
 const adSchema = new mongoose.Schema({
   title: String,
   price: String,
-  condition: String,
-  isNegotiable: String,
-  description: String,
+  adDescription: String,
   adLocation: String,
+  categoryId: String,
   datePosted: String,
-  category: String,
   gallery: []
 });
 

@@ -1,6 +1,6 @@
 import { graphqlHTTP } from "express-graphql";
 import express from "express";
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 import cors from "cors";
 
 //Local imports
@@ -12,16 +12,23 @@ const app = express();
 app.use(cors());
 
 //Connection to mongoDB
-const mongoURI = "mongodb+srv://ufrLUeusmHUclJkp:ufrLUeusmHUclJkp@fabra0.d7moj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+// const mongoURI = process.env.MONGOURI;
+const URI = "mongodb+srv://ufrLUeusmHUclJkp:ufrLUeusmHUclJkp@fabra0.d7moj.mongodb.net/adsDB?retryWrites=true&w=majority";
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Local mongoDB
-// mongoose.connect("'mongodb://localhost:27017/adsDB", { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect("mongodb://localhost:27017/adsDB", { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.once("open", () => { console.log("Database open"); });
+
 //Graphql initialization
 app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
 //Start Server
+
+app.get("/", (req, res) => {
+  res.send("Hello world")
+})
+
 app.listen(process.env.PORT || 4000, () => {
   console.log("Server running");
 });
