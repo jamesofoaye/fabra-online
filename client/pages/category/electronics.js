@@ -1,7 +1,29 @@
 import {Box, Button, Flex, Image, Spacer} from "@chakra-ui/react";
 import {AddIcon} from "@chakra-ui/icons";
 
-export default function Electronics(){
+//Get data from graphql server
+import { graphql } from "react-apollo";
+import { getCandE } from "../../queries/queries";
+
+const Electronics = (props) => {
+
+    const showAds = () => {
+        if (props.data.loading) {
+            return <div>Loading</div>
+        } else {
+            return props.data.category.ads.map(ad => {
+                return (<div key={ad.id}>
+                    <img src={ad.gallery[0]} />
+                    {ad.title}
+                    {ad.description}
+                    {ad.price}
+                    {ad.location}
+                    {ad.datePosted}
+                </div>)
+            })
+        }
+    }
+
     return(
         <div>
             <Box>
@@ -26,6 +48,17 @@ export default function Electronics(){
                     </Button>
                 </Flex>
             </Box>
+            <br/>
+            {/* Rander catergory ads */}
+        <br/>
+        <br/>
+        <br/>
+        <div>
+            <h5><strong>Hello and welocome to the ... ads page</strong></h5>
+             {showAds()}
+        </div>
+        {/* Render category ads */}
         </div>
     )
 }
+export default graphql(getCandE)(Electronics);

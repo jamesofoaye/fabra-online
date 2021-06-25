@@ -11,16 +11,15 @@ const CategorySelect = (props) => {
             return (
                 props.data.categories.map(category => {
                     return (
-                        <option> {category.name}</option>
+                        <option value={category.id}> {category.name}</option>
                     )
                 })
             )
         }
     }
-    return (
-        <Select placeholder="Select Category" required onChange={(e) => { props.handleChange(e); }} value={props.adDetails.category} name="category">
+    return (<>
             {showCategories()}
-        </Select>
+    </>
     )
 }
 export default graphql(getCategories)(CategorySelect);

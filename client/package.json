@@ -21,6 +21,7 @@
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",
     "apollo-link-ws": "^1.0.20",
+    "dotenv": "^10.0.0",
     "firebase": "^8.2.4",
     "framer-motion": "^3.2.1",
     "graphql": "^15.5.0",

@@ -1,7 +1,28 @@
 import {Box, Button, Flex, Image, Spacer} from "@chakra-ui/react";
 import {AddIcon} from "@chakra-ui/icons";
 
-export default function Furniture_and_Appliances(){
+//Get data from graphql server
+import { graphql } from "react-apollo";
+import { getFandA } from "../../queries/queries";
+
+const Furniture_and_Appliances = (props) => {
+    const showAds = () => {
+        if (props.data.loading) {
+            return <div>Loading</div>
+        } else {
+            return props.data.category.ads.map(ad => {
+                return (<div key={ad.id}>
+                    <img src={ad.gallery[0]} />
+                    {ad.title}
+                    {ad.description}
+                    {ad.price}
+                    {ad.location}
+                    {ad.datePosted}
+                </div>)
+            })
+        }
+    }
+    
     return(
         <div>
             <Box>
@@ -26,6 +47,17 @@ export default function Furniture_and_Appliances(){
                     </Button>
                 </Flex>
             </Box>
+             {/* Render catergory ads */}
+             <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div>
+            <h5><strong>{props.data.category.name}</strong></h5>
+             {showAds()}
+        </div>
+        {/* Render category ads */}
         </div>
     )
 }
+export default graphql(getFandA)(Furniture_and_Appliances);

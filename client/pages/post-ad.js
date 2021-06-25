@@ -4,11 +4,11 @@ import {
   NumberIncrementStepper, NumberInputStepper,
   NumberInputField, NumberInput, Textarea, Stack
 } from "@chakra-ui/react";
-//import ImageUploader from '../components/uploader'
 import Head from "next/head";
 
 //written for backend
 import { useState } from "react";
+import CategorySelect from "../components/utilities/CategorySelect";
 
 const Post_An_Ad = (props) => {
  const [adInfo, setadInfo] = useState({
@@ -27,6 +27,7 @@ const handleInputChange = (e) => {
     return {...preVal, [name]: value}
   })
 }
+
   return (
     <>
       <Head>
@@ -91,29 +92,16 @@ const handleInputChange = (e) => {
 
         <FormControl>
           <FormLabel>Category</FormLabel>
-          <Select name="category" value={adInfo.category}
-          onChange={handleInputChange}
-            placeholder="Select Category"
-            required
-          >
-            <option>Animals &amp; Pets</option>
-            <option>Computers &amp; Electronics</option>
-            <option>Fashion</option>
-            <option>Furniture &amp; Appliances</option>
-            <option>Grocery / African Restaurants &amp; Food</option>
-            <option>House / Apartments</option>
-            <option>Jobs</option>
-            <option>Mobile phones &amp; Tablets</option>
-            <option>Nanny &amp; Baby Sitters</option>
-            <option>Repair &amp; Construction</option>
-            <option>Salon &amp; Barbering</option>
-            <option>Vehicles</option>
+          <Select placeholder="Select Category" 
+          required onChange={handleInputChange} 
+          value={adInfo.category} 
+          name="category">
+            <CategorySelect/>
           </Select>
           <FormHelperText>
             Which category does your product or service falls in?
           </FormHelperText>
         </FormControl>
-
         <Button
           type="submit" mt={10}
           bgGradient="linear(to-r,brand.200,brand.100)"
