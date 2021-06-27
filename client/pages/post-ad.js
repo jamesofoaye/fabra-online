@@ -12,6 +12,8 @@ import CategorySelect from "../components/utilities/CategorySelect";
 import UploadForm from "../components/utilities/UploadForm";
 import ImageGrid from "../components/utilities/ImageGrid";
 
+import { graphql, Mutation } from "react-apollo";
+import { newAdMutation } from "../queries/queries";
 
 const Post_An_Ad = (props) => {
  const [adInfo, setadInfo] = useState({
@@ -31,6 +33,20 @@ const handleInputChange = (e) => {
   })
 }
 
+const submitForm = (e) => {
+  e.preventDefault()
+  props.newAdMutation({
+    variables:{
+      title: adInfo.title,
+      description: adInfo.description,
+      price: adInfo.price,
+      location: adInfo.location,
+      categoryId: adInfo.category,
+      gallery: adInfo.gallery
+    }
+  }
+  )
+}
   return (
     <>
       <Head>
@@ -44,7 +60,7 @@ const handleInputChange = (e) => {
           Post Ad
         </Heading>
       </Center>
-
+<form action="/post-ad" method="POST">
       <Stack px={{ base: 8, md: "30%" }}>
         <FormControl>
           <FormLabel>Title</FormLabel>
@@ -106,10 +122,13 @@ const handleInputChange = (e) => {
           </FormHelperText>
         </FormControl>
         {/* Photo Upload Form */}
+        <div>
         <UploadForm/>
         <ImageGrid/>
+        </div>
         {/* Photo Upload Form */}
         <Button
+          onClick={submitForm}
           type="submit" mt={10}
           bgGradient="linear(to-r,brand.200,brand.100)"
           _hover={{ bg: "brand.100" }}
@@ -118,9 +137,10 @@ const handleInputChange = (e) => {
         >
           Post Ad
         </Button>
-{console.log(adInfo)}
       </Stack>
+      </form>
+      {console.log(adInfo)}
     </>
   );
 }
-export default Post_An_Ad;
+export default graphql(newAdMutation, {name: "newAdMutation"})(Post_An_Ad);

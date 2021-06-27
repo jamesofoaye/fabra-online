@@ -234,6 +234,18 @@ const getAandP = gql`
   }
 `;
 
+//New Ad mutation 
+const newAdMutation = gql`
+mutation($title: String, $description: String, $price: Number, $location: String, $categoryId: ID, $gallery: [String]){
+  addAd(title: $title, description: $description, price: $price, location: $location, categoryId: $categoryId, gallery: $gallery){
+    title
+    price
+    description
+    location 
+  }
+}
+`
+
 export {
   getAds,
   getAandP,
@@ -248,5 +260,6 @@ export {
   getJobs,
   getMPandT,
   getNandBS,
-  getRandC
+  getRandC,
+  newAdMutation
 };
