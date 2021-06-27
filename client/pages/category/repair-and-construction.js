@@ -53,7 +53,7 @@ const Repair_and_Construction = (props) => {
             <br/>
             <br/>
             <div>
-            <h5><strong>{props.data.category.name}</strong></h5>
+            <h5><strong>Hello and welocome to the ... ads page</strong></h5>
              {showAds()}
         </div>
         {/* Render category ads */}

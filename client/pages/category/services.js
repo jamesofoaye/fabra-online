@@ -48,7 +48,6 @@ const Services = (props) => {
                     </Button>
                 </Flex>
             </Box>
-             
             {/* Render catergory ads */}
             <br/>
             <br/>

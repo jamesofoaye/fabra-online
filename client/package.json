@@ -37,7 +37,8 @@
     "react-firebaseui": "^4.1.0",
     "react-hook-form": "^6.14.2",
     "react-icons": "^4.2.0",
-    "subscriptions-transport-ws": "^0.9.18"
+    "subscriptions-transport-ws": "^0.9.18",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@apollo/react-ssr": "^4.0.0"
