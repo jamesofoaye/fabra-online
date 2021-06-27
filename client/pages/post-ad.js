@@ -9,6 +9,9 @@ import Head from "next/head";
 //written for backend
 import { useState } from "react";
 import CategorySelect from "../components/utilities/CategorySelect";
+import UploadForm from "../components/utilities/UploadForm";
+import ImageGrid from "../components/utilities/ImageGrid";
+
 
 const Post_An_Ad = (props) => {
  const [adInfo, setadInfo] = useState({
@@ -102,6 +105,10 @@ const handleInputChange = (e) => {
             Which category does your product or service falls in?
           </FormHelperText>
         </FormControl>
+        {/* Photo Upload Form */}
+        <UploadForm/>
+        <ImageGrid/>
+        {/* Photo Upload Form */}
         <Button
           type="submit" mt={10}
           bgGradient="linear(to-r,brand.200,brand.100)"

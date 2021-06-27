@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react"
 import { extendTheme } from "@chakra-ui/react"
 import {ProvideAuth} from '../lib/auth-context';
-
+import "../styles/index.css"
 //Connect to backend api stuff
 import ApolloClient from "apollo-boost";
 import {ApolloProvider} from "react-apollo";
