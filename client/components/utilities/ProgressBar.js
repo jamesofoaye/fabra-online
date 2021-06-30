@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import useStorage from "../../hooks/useStorage";
 import { motion } from "framer-motion";
-
+//
 const ProgressBar = ({ file, setFile, adBucket, adImageUrl }) => {
   const { progress, url } = useStorage(file, adBucket);
   if (url) {
