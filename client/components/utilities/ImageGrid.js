@@ -22,9 +22,6 @@ const ImageGrid = ({ setSelectedImg, adBucket }) => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             />
-            {/* <button className="delete">
-              <div className="del-icon">X</div>
-            </button> */}
           </motion.div>
         ))}
     </div>
