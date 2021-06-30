@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
-
+//Upload
 const UploadForm = ({ adBucket, adImageUrl }) => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
