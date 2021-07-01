@@ -6,7 +6,7 @@ const adSchema = new mongoose.Schema({
   description: String,
   location: String,
   categoryId: String,
-  datePosted: String,
+  datePosted: new Date().toISOString(),
   gallery: []
 });
 
