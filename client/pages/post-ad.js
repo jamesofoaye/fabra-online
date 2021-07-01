@@ -11,9 +11,12 @@ import { useState } from "react";
 import CategorySelect from "../components/utilities/CategorySelect";
 import UploadForm from "../components/utilities/UploadForm";
 import ImageGrid from "../components/utilities/ImageGrid";
+import { v4 as uuidv4 } from 'uuid';
 
 import { graphql, Mutation } from "react-apollo";
 import { newAdMutation } from "../queries/queries";
+
+const adBucket = uuidv4();
 
 const Post_An_Ad = (props) => {
  const [adInfo, setadInfo] = useState({
@@ -46,6 +49,12 @@ const submitForm = (e) => {
     }
   }
   )
+}
+const adImageUrl = (url) => {
+  if(url){
+    adInfo.gallery.push(url)
+    
+  }
 }
   return (
     <>
@@ -123,8 +132,8 @@ const submitForm = (e) => {
         </FormControl>
         {/* Photo Upload Form */}
         <div>
-        <UploadForm/>
-        <ImageGrid/>
+        <UploadForm adImageUrl={adImageUrl} adBucket={adBucket}/>
+        <ImageGrid adBucket={adBucket}/>
         </div>
         {/* Photo Upload Form */}
         <Button

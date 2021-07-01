@@ -11,7 +11,7 @@ const CategorySelect = (props) => {
             return (
                 props.data.categories.map(category => {
                     return (
-                        <option value={category.id}> {category.name}</option>
+                        <option key={category.id} value={category.id}> {category.name}</option>
                     )
                 })
             )
