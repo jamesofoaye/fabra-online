@@ -1,4 +1,21 @@
-import { FormLabel, Select, FormControl, Input, FormHelperText, Button, Center, Heading, Text, NumberDecrementStepper, NumberIncrementStepper, NumberInputStepper, NumberInputField, NumberInput, Textarea, Stack } from "@chakra-ui/react";
+import {
+  FormLabel,
+  Select,
+  FormControl,
+  Input,
+  FormHelperText,
+  Button,
+  Center,
+  Heading,
+  Text,
+  NumberDecrementStepper,
+  NumberIncrementStepper,
+  NumberInputStepper,
+  NumberInputField,
+  NumberInput,
+  Textarea,
+  Stack
+} from "@chakra-ui/react";
 import { graphql } from "react-apollo";
 import { getCategories } from "../../queries/queries";
 
@@ -16,10 +33,9 @@ const CategorySelect = (props) => {
                 })
             )
         }
-    }
-    return (<>
-            {showCategories()}
-    </>
-    )
-}
+  }
+  return <>{showCategories()}</>;
+  };
+  
+
 export default graphql(getCategories)(CategorySelect);

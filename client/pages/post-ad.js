@@ -1,17 +1,29 @@
 import {
-  FormLabel, Select, FormControl, Input, FormHelperText,
-  Button, Center, Heading, NumberDecrementStepper,
-  NumberIncrementStepper, NumberInputStepper,
-  NumberInputField, NumberInput, Textarea, Stack
+  FormLabel,
+  Select,
+  FormControl,
+  Input,
+  FormHelperText,
+  Button,
+  Center,
+  Heading,
+  NumberDecrementStepper,
+  NumberIncrementStepper,
+  NumberInputStepper,
+  NumberInputField,
+  NumberInput,
+  Textarea,
+  Stack
 } from "@chakra-ui/react";
 import Head from "next/head";
 
 //written for backend
+import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import CategorySelect from "../components/utilities/CategorySelect";
 import UploadForm from "../components/utilities/UploadForm";
 import ImageGrid from "../components/utilities/ImageGrid";
-import { v4 as uuidv4 } from 'uuid';
+
 
 import { graphql, Mutation } from "react-apollo";
 import { newAdMutation } from "../queries/queries";
@@ -19,37 +31,37 @@ import { newAdMutation } from "../queries/queries";
 const adBucket = uuidv4();
 
 const Post_An_Ad = (props) => {
- const [adInfo, setadInfo] = useState({
-   title: "",
-   description: "",
-   price: null,
-   location: "",
-   category: "",
-   gallery: []
- });
+  const [adInfo, setadInfo] = useState({
+    title: "",
+    description: "",
+    price: null,
+    location: "",
+    category: "",
+    gallery: []
+  });
 
-const handleInputChange = (e) => {
-  const name = e.target.name;
-  const value = e.target.value
-  setadInfo(preVal => {
-    return {...preVal, [name]: value}
-  })
-}
+  const handleInputChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setadInfo((preVal) => {
+      return { ...preVal, [name]: value };
+    });
+  };
 
-const submitForm = (e) => {
-  e.preventDefault()
-  props.newAdMutation({
-    variables:{
-      title: adInfo.title,
-      description: adInfo.description,
-      price: adInfo.price,
-      location: adInfo.location,
-      categoryId: adInfo.category,
-      gallery: adInfo.gallery
-    }
-  }
-  )
-}
+  const submitForm = (e) => {
+    e.preventDefault();
+    props.newAdMutation({
+      variables: {
+        title: adInfo.title,
+        description: adInfo.description,
+        price: adInfo.price,
+        location: adInfo.location,
+        categoryId: adInfo.category,
+        gallery: adInfo.gallery
+      }
+    });
+  };
+
 const adImageUrl = (url) => {
   if(url){
     adInfo.gallery.push(url)
@@ -64,59 +76,51 @@ const adImageUrl = (url) => {
       </Head>
 
       <Center>
-        <Heading color="brand.200"
-          py={2}>
+        <Heading color="brand.200" py={2}>
           Post Ad
         </Heading>
       </Center>
-<form action="/post-ad" method="POST">
-      <Stack px={{ base: 8, md: "30%" }}>
-        <FormControl>
-          <FormLabel>Title</FormLabel>
-          <Input name="title" value={adInfo.title}
-          onChange={handleInputChange}
-            autoFocus
-            aria-label="Title"
-            name="title"
-            required
-            placeholder="Please enter the name of your ad."
-          />
-        </FormControl>
-
-        <FormControl>
-          <FormLabel>Description</FormLabel>
-          <Textarea name="description" value={adInfo.description}
-          onChange={handleInputChange}
-            aria-label="Description"
-            name="description"
-            required
-            placeholder="Please enter description."
-          />
-        </FormControl>
-
-        <FormControl>
-          <FormLabel>Price</FormLabel>
-          <NumberInput>
-            <NumberInputField name="price" value={adInfo.price}
-            onChange={handleInputChange}
+      <form action="/post-ad" method="POST">
+        <Stack px={{ base: 8, md: "30%" }}>
+          <FormControl>
+            <FormLabel>Title</FormLabel>
+            <Input
+              name="title"
+              value={adInfo.title}
+              onChange={handleInputChange}
+              autoFocus
+              aria-label="Title"
+              name="title"
               required
-              aria-label="Price"
-              name="price"
-              placeholder="Please enter price."
+              placeholder="Please enter the name of your ad."
             />
-          </NumberInput>
-        </FormControl>
+          </FormControl>
 
-        <FormControl>
-          <FormLabel>Location</FormLabel>
-          <Input name="location" value={adInfo.location}
-          onChange={handleInputChange}
-            aria-label="Location"
-            name="location"
-            required
-            placeholder="Please enter your location."
-          />
-        </FormControl>
+          <FormControl>
+            <FormLabel>Description</FormLabel>
+            <Textarea
+              name="description"
+              value={adInfo.description}
+              onChange={handleInputChange}
+              aria-label="Description"
+              required
+              placeholder="Please enter description."
+            />
+          </FormControl>
+
+          <FormControl>
+            <FormLabel>Price</FormLabel>
+            <NumberInput>
+              <NumberInputField
+                name="price"
+                value={adInfo.price}
+                onChange={handleInputChange}
+                required
+                aria-label="Price"
+                placeholder="Please enter price."
+              />
+            </NumberInput>
+          </FormControl>
 
         <FormControl>
           <FormLabel>Category</FormLabel>
@@ -148,8 +152,7 @@ const adImageUrl = (url) => {
         </Button>
       </Stack>
       </form>
-      {console.log(adInfo)}
     </>
   );
-}
-export default graphql(newAdMutation, {name: "newAdMutation"})(Post_An_Ad);
+};
+export default graphql(newAdMutation, { name: "newAdMutation" })(Post_An_Ad);

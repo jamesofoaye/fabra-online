@@ -12,11 +12,12 @@ const ProgressBar = ({ file, setFile, adBucket, adImageUrl }) => {
   }, [url, setFile]);
 
   return (
-    <motion.div className="progress-bar"
+    <motion.div
+      className="progress-bar"
       initial={{ width: 0 }}
-      animate={{ width: progress + '%' }}
+      animate={{ width: progress + "%" }}
     ></motion.div>
   );
-} 
+};
 
 export default ProgressBar;
