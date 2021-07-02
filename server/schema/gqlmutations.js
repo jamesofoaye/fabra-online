@@ -29,7 +29,7 @@ const Mutation = new GraphQLObjectType({
         resolve: (parent, args) => {
           let newAd = new Ad({
             title: args.title,
-            lescription: args.description,
+            description: args.description,
             price: args.price,
             categoryId: args.categoryId,
             location: args.location,

@@ -37,6 +37,7 @@ const Post_An_Ad = (props) => {
     price: null,
     location: "",
     category: "",
+    datePosted: new Date().toISOString,
     gallery: []
   });
 
@@ -57,7 +58,8 @@ const Post_An_Ad = (props) => {
         price: adInfo.price,
         location: adInfo.location,
         categoryId: adInfo.category,
-        gallery: adInfo.gallery
+        gallery: adInfo.gallery,
+        datePosted: adInfo.datePosted
       }
     });
   };
@@ -133,7 +135,19 @@ const adImageUrl = (url) => {
           <FormHelperText>
             Which category does your product or service falls in?
           </FormHelperText>
-        </FormControl>
+          </FormControl>
+          <FormControl>
+            <FormLabel>Location</FormLabel>
+            <Input
+              name="Location"
+              value={adInfo.Location}
+              onChange={handleInputChange}
+              autoFocus
+              aria-label="Location"
+              required
+              placeholder="Please enter the name of your ad."
+            />
+          </FormControl>
         {/* Photo Upload Form */}
         <div>
         <UploadForm adImageUrl={adImageUrl} adBucket={adBucket}/>

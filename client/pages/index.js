@@ -155,7 +155,6 @@ export default function Home() {
           <ProductInitialShowing />
         </div>
 
-
         <Center p={5}>
           <Button
             bgGradient="linear(to-r,brand.200,brand.100)"
