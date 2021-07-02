@@ -37,7 +37,7 @@ const Post_An_Ad = (props) => {
     price: null,
     location: "",
     category: "",
-    datePosted: new Date().toISOString,
+    datePosted: new Date().toUTCString(),
     gallery: []
   });
 
@@ -139,11 +139,11 @@ const adImageUrl = (url) => {
           <FormControl>
             <FormLabel>Location</FormLabel>
             <Input
-              name="Location"
-              value={adInfo.Location}
+              name="location"
+              value={adInfo.location}
               onChange={handleInputChange}
               autoFocus
-              aria-label="Location"
+              aria-label="location"
               required
               placeholder="Please enter the name of your ad."
             />
